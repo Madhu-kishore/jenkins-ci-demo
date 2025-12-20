@@ -1,2 +1,2 @@
-FROM alpine:latest
-CMD ["echo", "Hello from Docker built by Jenkins"]
+FROM nginx
+COPY . /usr/share/nginx/html
