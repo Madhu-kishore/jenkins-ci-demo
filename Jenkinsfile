@@ -11,7 +11,7 @@ pipeline {
 
         stage('Build Docker Image') {
             steps {
-                sh 'docker build -t abhinava533289/hello-jenkins:latest .'
+                sh 'docker build -t abhinava533289/hello-jenkins-pipeline:latest .'
             }
         }
 
