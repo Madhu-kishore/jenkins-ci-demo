@@ -4,7 +4,8 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git 'https://github.com/Madhu-kishore/jenkins-ci-demo.git'
+                git branch: 'main',
+                    url: 'https://github.com/Madhu-kishore/jenkins-ci-demo.git'
             }
         }
 
@@ -16,19 +17,8 @@ pipeline {
 
         stage('Push Docker Image') {
             steps {
-                withCredentials([usernamePassword(
-                    credentialsId: 'dockerhub-creds',
-                    usernameVariable: 'DOCKER_USER',
-                    passwordVariable: 'DOCKER_PASS'
-                )]) {
-                    sh '''
-                        echo "$DOCKER_PASS" | docker login -u "$DOCKER_USER" --password-stdin
-                        docker push abhinava533289/hello-jenkins:latest
-                    '''
-                }
+                sh 'docker push abhinava533289/hello-jenkins:latest'
             }
         }
     }
 }
-
-
