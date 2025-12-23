@@ -17,7 +17,7 @@ pipeline {
 
         stage('Push Docker Image') {
             steps {
-                sh 'docker push abhinava533289/hello-jenkins:latest'
+                sh 'docker push abhinava533289/hello-jenkins-pipeline:latest'
             }
         }
     }
