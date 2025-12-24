@@ -11,13 +11,13 @@ pipeline {
 
         stage('Build Docker Image') {
             steps {
-                sh 'docker build -t abhinava533289/hello-jenkins-pipeline2:latest .'
+                sh 'docker build -t abhinava533289/hello-jenkins-pipeline3:latest .'
             }
         }
 
         stage('Push Docker Image') {
             steps {
-                sh 'docker push abhinava533289/hello-jenkins-pipeline2:latest'
+                sh 'docker push abhinava533289/hello-jenkins-pipeline3:latest'
             }
         }
     }
